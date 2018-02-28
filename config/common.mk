@@ -165,6 +165,8 @@ PRODUCT_PACKAGES += \
     LineageSettingsProvider \
     Eleven \
     ExactCalculator \
+    PhoneLocationProvider \
+    LockClock \
     Trebuchet \
     LockClock \
     Updater \
