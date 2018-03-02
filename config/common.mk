@@ -85,6 +85,12 @@ PRODUCT_COPY_FILES +=  \
 PRODUCT_COPY_FILES += \
     vendor/lineage/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
 
+# Google PinYin
+PRODUCT_COPY_FILES += $(shell test -d vendor/lineage/prebuilt/common/app/GooglePinYin && \
+    find vendor/lineage/prebuilt/common/app/GooglePinYin -name '*.so' \
+    -printf '%p:system/app/GooglePinYin/lib/arm64/%f ')
+
+
 # Enable SIP+VoIP on all targets
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.sip.voip.xml:system/etc/permissions/android.software.sip.voip.xml
