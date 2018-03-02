@@ -3,6 +3,6 @@ $(call inherit-product, vendor/rr/config/common_mini.mk)
 
 # Required packages
 PRODUCT_PACKAGES += \
-    LatinIME
+    GooglePinYin
 
 $(call inherit-product, vendor/rr/config/telephony.mk)
