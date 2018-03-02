@@ -167,6 +167,7 @@ PRODUCT_PACKAGES += \
     ExactCalculator \
     PhoneLocationProvider \
     LockClock \
+    ForceStop \
     Trebuchet \
     LockClock \
     Updater \
