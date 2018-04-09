@@ -79,15 +79,15 @@ PRODUCT_COPY_FILES += \
 
 # Phonelocation!
 PRODUCT_COPY_FILES +=  \
-    vendor/lineage/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
+    vendor/rr/prebuilt/common/media/location/suda-phonelocation.dat:system/media/location/suda-phonelocation.dat
 
 # World SPN overrides list
 PRODUCT_COPY_FILES += \
-    vendor/lineage/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
+    vendor/rr/prebuilt/common/etc/spn-conf.xml:system/etc/spn-conf.xml
 
 # Google PinYin
-PRODUCT_COPY_FILES += $(shell test -d vendor/lineage/prebuilt/common/app/GooglePinYin && \
-    find vendor/lineage/prebuilt/common/app/GooglePinYin -name '*.so' \
+PRODUCT_COPY_FILES += $(shell test -d vendor/rr/prebuilt/common/app/GooglePinYin && \
+    find vendor/rr/prebuilt/common/app/GooglePinYin -name '*.so' \
     -printf '%p:system/app/GooglePinYin/lib/arm64/%f ')
 
 
