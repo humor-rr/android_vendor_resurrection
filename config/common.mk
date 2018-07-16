@@ -28,7 +28,7 @@ endif
 
 ifneq ($(TARGET_BUILD_VARIANT),eng)
 # Enable ADB authentication
-PRODUCT_DEFAULT_PROPERTY_OVERRIDES += ro.adb.secure=1
+PRODUCT_SYSTEM_DEFAULT_PROPERTIES += ro.adb.secure=1
 endif
 
 ifeq ($(BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE),)
@@ -45,6 +45,13 @@ PRODUCT_COPY_FILES += \
     vendor/rr/prebuilt/common/bin/backuptool.functions:install/bin/backuptool.functions \
     vendor/rr/prebuilt/common/bin/blacklist:system/addon.d/blacklist \
     vendor/rr/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
+
+ifeq ($(AB_OTA_UPDATER),true)
+PRODUCT_COPY_FILES += \
+    vendor/rr/prebuilt/common/bin/backuptool_ab.sh:system/bin/backuptool_ab.sh \
+    vendor/rr/prebuilt/common/bin/backuptool_ab.functions:system/bin/backuptool_ab.functions \
+    vendor/rr/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
+endif
 
 # Backup Services whitelist
 PRODUCT_COPY_FILES += \
