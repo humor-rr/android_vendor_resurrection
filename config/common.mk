@@ -61,10 +61,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/rr/config/permissions/rr-sysconfig.xml:system/etc/sysconfig/rr-sysconfig.xml
 
-# Signature compatibility validation
-PRODUCT_COPY_FILES += \
-    vendor/rr/prebuilt/common/bin/otasigcheck.sh:install/bin/otasigcheck.sh
-
 # init.d support
 PRODUCT_COPY_FILES += \
     vendor/rr/prebuilt/common/etc/init.d/00banner:system/etc/init.d/00banner \
@@ -155,7 +151,6 @@ endif
 
 # Required rr packages
 PRODUCT_PACKAGES += \
-    BluetoothExt \
     LineageParts \
     Development \
     Profiles
@@ -223,21 +218,16 @@ PRODUCT_PACKAGES += \
     bash \
     bzip2 \
     curl \
-    fsck.ntfs \
     gdbserver \
     htop \
     lib7z \
     libsepol \
     micro_bench \
-    mke2fs \
-    mkfs.ntfs \
-    mount.ntfs \
     oprofiled \
     pigz \
     powertop \
     sqlite3 \
     strace \
-    tune2fs \
     unrar \
     unzip \
     vim \
@@ -256,10 +246,14 @@ PRODUCT_PACKAGES += \
     libhealthd.lineage
 endif
 
-# exFAT tools
+# Filesystems tools
 PRODUCT_PACKAGES += \
     fsck.exfat \
-    mkfs.exfat
+    fsck.ntfs \
+    mke2fs \
+    mkfs.exfat \
+    mkfs.ntfs \
+    mount.ntfs
 
 # Openssh
 PRODUCT_PACKAGES += \
